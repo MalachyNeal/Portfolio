@@ -1,17 +1,3 @@
-The pages we each worked on:
+Hello this is my svelte portfolio project for the end of 2nd year
 
-Malachy:
-User Reviews
-Contact Us
-
-Vanessa:
-Things To Do
-Homepage
-Globals.css
-Footer
-Header
-Navigation
-
-Ak:
-Guides
-About
+(lets hope i know what im doing)
