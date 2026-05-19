@@ -30,17 +30,6 @@
 
 <!-- Page Container -->
 <div class="home-container">
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Live Mindfully. Learn Purposefully.</h1>
-        <p class="subheading">
-            Inspired by the 7 Virtues of Bushidō and the 11 Principles of the Shinobi.
-        </p>
-        <button class="inspire-button" on:click={openQuoteModal}>
-            Find Inspiration
-        </button>
-    </section>
-
     <!-- Featured Catalogue Section -->
     <section class="featured">
         <h2>Featured Practices</h2>
@@ -54,10 +43,7 @@
 				>
                     <CatalogueCard
                         title={item.title}
-                        description={item.description}
                         image={item.image}
-                        category={item.category}
-                        tags={item.tags}
                         animationDelay={index * 80}
                     />
                 </button>
@@ -66,22 +52,6 @@
         <a class="browse-link" href="{resolve('/projects')}">Browse Full Catalogue →</a>
     </section>
 
-    <!-- About Teaser Section -->
-    <section class="about-teaser">
-        <h2>Why This Matters</h2>
-        <p>
-            This project blends timeless wisdom with modern habits — from Stoic journaling to Shinobi adaptability.
-            Whether you seek health, discipline, or mindfulness, our tools are here to guide you.
-        </p>
-        <a href="{resolve('/about')}" class="learn-more">Learn more →</a>
-    </section>
-
-    <!-- Quote Modal -->
-    <Modal
-        bind:isOpen={showQuoteModal}
-        {...$currentQuote}
-        onClose={() => (showQuoteModal = false)}
-    />
 </div>
 
 
@@ -90,50 +60,6 @@
         display: flex;
         flex-direction: column;
         gap: var(--space-xl);
-    }
-
-    /* Hero Section */
-    .hero {
-        text-align: center;
-        padding: var(--space-xl) var(--space-md);
-        border-radius: var(--radius-md);
-        box-shadow: var(--shadow-sm);
-        background-image: url('/images/backgrounds/zen-hero.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-blend-mode: overlay;
-        background-color: rgba(255, 255, 255, 0.75);
-    }
-
-    .hero h1 {
-        font-size: var(--font-xxl);
-        font-family: var(--font-heading);
-        margin-bottom: var(--space-sm);
-    }
-
-    .subheading {
-        font-size: var(--font-lg);
-        font-family: var(--font-body);
-        color: var(--text-secondary);
-        margin-bottom: var(--space-md);
-    }
-
-    .inspire-button {
-        padding: var(--space-sm) var(--space-lg);
-        background-color: var(--color-accent);
-        color: var(--text-contrast);
-        font-size: var(--font-base);
-        font-weight: 600;
-        border: none;
-        border-radius: var(--radius-sm);
-        cursor: pointer;
-        transition: background-color var(--transition-fast);
-    }
-
-    .inspire-button:hover,
-    .inspire-button:focus {
-        background-color: var(--color-highlight);
     }
 
     /* Featured Section */
@@ -181,40 +107,4 @@
         color: var(--color-accent);
     }
 
-    /* About Teaser */
-    .about-teaser {
-        text-align: center;
-        padding: var(--space-lg) var(--space-md);
-        background-color: var(--color-background);
-        border-top: var(--border-default);
-        background: linear-gradient(to top, var(--color-surface), transparent);
-        background-image: url('/images/backgrounds/scroll-teaser.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-blend-mode: overlay;
-        background-color: rgba(255, 255, 255, 0.75);
-    }
-
-    .about-teaser h2 {
-        font-family: var(--font-heading);
-        margin-bottom: var(--space-sm);
-    }
-
-    .about-teaser p {
-        font-size: var(--font-base);
-        color: var(--text-secondary);
-        max-width: 60ch;
-        margin: 0 auto var(--space-sm) auto;
-    }
-
-    .learn-more {
-        font-size: var(--font-sm);
-        color: var(--color-accent);
-        text-decoration: none;
-    }
-
-    .learn-more:hover {
-        text-decoration: underline;
-    }
 </style>
