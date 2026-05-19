@@ -35,11 +35,6 @@
 </script>
 
 
-<svelte:head>
-	<title>{item.title} | Catalogue</title>
-</svelte:head>
-
-
 <section class="item-detail">
 	<div class="detail-content">
 		<img class="hero-image" src={asset(item.image)} alt={`Image for ${item.title}`} />
